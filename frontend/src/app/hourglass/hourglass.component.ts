@@ -24,5 +24,4 @@ export class HourglassComponent implements OnInit {
     console.log('From angular!');
     console.log(this.serverData);
   }
-
 }
