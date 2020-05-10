@@ -1,0 +1,7 @@
+{
+  "name": "Accelerator Zero",
+  "description": "Testing web application development based on flask and angular technology",
+  "repository": "https://github.com/like2000/flask-accelerator-zero",
+  "logo": "https://node-js-sample.herokuapp.com/flask.png",
+  "keywords": ["flask", "angular", "test"]
+}
