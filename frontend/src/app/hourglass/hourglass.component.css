@@ -1,0 +1,9 @@
+.container {
+  width: 70%;
+  display: flex;
+  padding: 24px;
+  margin: 24px auto;
+  border-left: solid 3px gray;
+  border-right: solid 3px gray;
+  justify-content: space-between;
+}
