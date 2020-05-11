@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -b https://flask-accelerator-zero.herokuapp.com:8080 "wsgi:app"
+web: gunicorn -w 4 "wsgi:app"
