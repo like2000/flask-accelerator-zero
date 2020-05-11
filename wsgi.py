@@ -24,8 +24,7 @@ def hello_world():
 if __name__ == '__main__':
     # try:
     host = "https://accelerator-zero.herokuapp.com"
-    # app.run(host=host)
-    app.run(host='localhost', port=5000)
+    app.run(host=host)
 # except:
 #     host="localhost"
 #     app.run(host=host)

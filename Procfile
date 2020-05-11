@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -b localhost:5000 "wsgi:app"
+web: gunicorn -w 4 -b https://accelerator-zero.herokuapp.com "wsgi:app"
