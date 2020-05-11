@@ -18,7 +18,8 @@ export class HourglassComponent implements OnInit {
   }
 
   getData(): void {
-    this.httpClient.get('http://127.0.0.1:5000/data').subscribe(value => {
+    const url = 'http://flask-accelerator-zero.herokuapp.com/data';
+    this.httpClient.get(url).subscribe(value => {
       this.serverData = value as JSON;
     });
     console.log('From angular!');
