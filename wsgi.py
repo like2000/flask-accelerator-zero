@@ -1,14 +1,16 @@
 from flask import Flask, send_from_directory
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask_restful import Api, Resource
 from backend.entities import Entity
 
 app = Flask(__name__,
             static_folder='backend/static/')
-api = Api(app)
-CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
+api = Api(app)
 api.add_resource(Entity, '/data')
+
+CORS(app)
 
 
 @app.route('/<path:path>', methods=['GET'])
@@ -17,6 +19,7 @@ def static_proxy(path):
 
 
 @app.route('/')
+@cross_origin(origin='localhost', headers=['Content- Type', 'Authorization'])
 def hello_world():
     return send_from_directory('backend/static', 'index.html')
 
