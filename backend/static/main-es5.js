@@ -361,7 +361,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getData() {
           var _this = this;
 
-          var url = 'https://flask-accelerator-zero.herokuapp.com/data';
+          var url = 'https://accelerator-zero.herokuapp.com/data';
           this.httpClient.get(url).subscribe(function (value) {
             _this.serverData = value;
           });
