@@ -19,7 +19,7 @@ def static_proxy(path):
 
 
 @app.route('/')
-@cross_origin(origin='localhost', headers=['Content- Type', 'Authorization'])
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def hello_world():
     return send_from_directory('backend/static', 'index.html')
 
