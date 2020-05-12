@@ -1,5 +1,6 @@
 from flask import jsonify
 from flask_restful import Resource
+from flask_restful.utils import cors
 
 
 class Entity(Resource):
@@ -7,6 +8,7 @@ class Entity(Resource):
     def __init__(self):
         pass
 
+    @cors.crossdomain(origin='*')
     def get(self):
         print("Hello from Python!")
         return jsonify({
