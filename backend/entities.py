@@ -1,4 +1,5 @@
 from flask import jsonify
+import pandas as pd
 from flask_cors import cross_origin
 from flask_restful import Resource
 from flask_restful.utils import cors
@@ -7,16 +8,17 @@ from flask_restful.utils import cors
 class Entity(Resource):
 
     def __init__(self):
-        pass
+        self.df = pd.DataFrame(columns=["Start", "Stop", "Period", "Info"])
 
     # @cross_origin(origin='*')
     def get(self):
         print("Hello from Python!")
-        return jsonify({
-            'Orc': 800,
-            'Farnir': 400,
-            'Goblin': 200,
-        })
+        return self.df.to_json()
+        # return jsonify({
+        #     'Orc': 800,
+        #     'Farnir': 400,
+        #     'Goblin': 200,
+        # })
 
     def data_output(self):
         pass

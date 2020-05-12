@@ -9,7 +9,9 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class HourglassComponent implements OnInit {
 
-  serverData: JSON;
+  serverData;
+
+  // serverData: JSON;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -22,6 +24,9 @@ export class HourglassComponent implements OnInit {
     this.httpClient.get(url).subscribe(value => {
       this.serverData = value as JSON;
     });
+    this.serverData = [
+      {Start: 1, Stop: 2, Period: 3}
+    ];
     console.log('From angular!');
     console.log(this.serverData);
   }

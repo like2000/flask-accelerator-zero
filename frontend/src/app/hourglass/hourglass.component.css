@@ -7,3 +7,7 @@
   border-right: solid 3px gray;
   justify-content: space-between;
 }
+
+table {
+  width: 80%;
+}
