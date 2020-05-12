@@ -7,10 +7,11 @@ app = Flask(__name__,
             static_folder='backend/static/')
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+# CORS(app)
+cors = CORS(app, resources={r"*": {"origins": "*"}})
+
 api = Api(app)
 api.add_resource(Entity, '/data')
-
-CORS(app)
 
 
 @app.after_request
