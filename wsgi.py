@@ -8,17 +8,17 @@ app = Flask(__name__,
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 api = Api(app)
-api.add_resource(Entity, '/data')
+api.add_resource(Entity, '/')
 
 CORS(app)
 
 
-@app.route('/<path:path>', methods=['GET'])
+@app.route('/<path:path>', methods=['GET', 'POST', 'OPTIONS'])
 def static_proxy(path):
     return send_from_directory('backend/static', path)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def hello_world():
     return send_from_directory('backend/static', 'index.html')

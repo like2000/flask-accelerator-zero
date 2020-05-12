@@ -196,7 +196,7 @@ class HourglassComponent {
     ngOnInit() {
     }
     getData() {
-        const url = 'https://flask-accelerator-zero.herokuapp.com/data';
+        const url = 'https://flask-accelerator-zero.herokuapp.com/';
         this.httpClient.get(url).subscribe(value => {
             this.serverData = value;
         });
