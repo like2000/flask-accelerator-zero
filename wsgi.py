@@ -8,12 +8,13 @@ app = Flask(__name__,
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 api = Api(app)
-api.add_resource(Entity, '/')
+api.add_resource(Entity, '/data')
 
 CORS(app)
 
 
 @app.route('/<path:path>', methods=['GET', 'POST', 'OPTIONS'])
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def static_proxy(path):
     return send_from_directory('backend/static', path)
 
