@@ -9,7 +9,7 @@ class Entity(Resource):
     def __init__(self):
         pass
 
-    @cross_origin(origin='*')
+    # @cross_origin(origin='*')
     def get(self):
         print("Hello from Python!")
         return jsonify({
