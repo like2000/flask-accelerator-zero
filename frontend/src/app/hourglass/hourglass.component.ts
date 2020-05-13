@@ -20,8 +20,9 @@ export class HourglassComponent implements OnInit {
 
   hourGlassElement = {};
 
-  serverData: JSON;
-  dataSource: MatTableDataSource<HourGlassElement>;
+  // serverData: JSON;
+  serverData;
+  dataSource: any[];
 
 //   ngOnInit() {
 //   this.yourService.getData()
@@ -42,12 +43,13 @@ export class HourglassComponent implements OnInit {
     // const url = 'https://accelerator-zero.herokuapp.com/data';
     this.httpClient.get(url).subscribe(value => {
       this.serverData = value as JSON;
-      // this.dataSource = new MatTableDataSource();
+      this.dataSource = new Array(this.serverData);
+      // this.dataSource = new MatTableDataSource(value);
     });
     // this.serverData = [
     //   {Start: 1, Stop: 2, Period: 3}
     // ];
-    console.log(JSON.stringify(this.serverData));
+    console.log(this.serverData);
     console.log('From angular!');
   }
 }

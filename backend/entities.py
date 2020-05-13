@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from flask import jsonify
+from flask import jsonify, Response
 from flask_restful import Resource
 
 
@@ -14,8 +14,9 @@ class Entity(Resource):
         print(np.random.rand(4))
         self.df.loc[len(self.df)] = np.random.rand(4)
         self.df.reset_index(drop=True)
-        print("Hello from Python!")
-        return self.df.to_json()
+        print("Hello from Python!", len(self.df), id(self), id(self.df))
+        response = Response(response=self.df.to_json(), status=200, mimetype="application/json")
+        return response
         # return jsonify({
         #     'Orc': 800,
         #     'Farnir': 400,
