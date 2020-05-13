@@ -1,13 +1,21 @@
-.container {
-  width: 70%;
-  display: flex;
-  padding: 24px;
-  margin: 24px auto;
-  border-left: solid 3px gray;
-  border-right: solid 3px gray;
-  justify-content: space-between;
-}
-
 table {
   width: 80%;
+  /*justify-content: center;*/
+}
+
+.container {
+  width: 70%;
+  padding: 24px;
+  display: flex;
+  min-height: 100%;
+  margin: 24px auto;
+  flex-flow: row wrap;
+  border-left: solid 3px gray;
+  border-right: solid 3px gray;
+  justify-content: space-around;
+}
+
+.break {
+  height: 30px;
+  flex-basis: 100%;
 }

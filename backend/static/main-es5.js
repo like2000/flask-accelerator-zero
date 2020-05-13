@@ -330,57 +330,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_material_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/material/table */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/table.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/material/toolbar */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/toolbar.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
     /* harmony import */
 
 
-    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/material/icon */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
-    /* harmony import */
-
-
-    var _angular_material_table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @angular/material/table */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/table.js");
-
-    function HourglassComponent_td_9_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 6);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var data_r1 = ctx.$implicit;
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r1.Start);
-      }
-    }
 
     var HourglassComponent = /*#__PURE__*/function () {
+      //   ngOnInit() {
+      //   this.yourService.getData()
+      //     .subscribe((data: Type[]) => {
+      //       this.data = data;
+      //       this.dataSource = new MatTableDataSource(data);
+      //     });
+      // }
       function HourglassComponent(httpClient) {
         _classCallCheck(this, HourglassComponent);
 
         this.httpClient = httpClient;
+        this.hourGlassElement = {};
       }
 
       _createClass(HourglassComponent, [{
@@ -394,9 +384,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var url = 'https://accelerator-zero.herokuapp.com/data';
           this.httpClient.get(url).subscribe(function (value) {
             _this.serverData = value;
-          });
+            _this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
+          }); // this.serverData = [
+          //   {Start: 1, Stop: 2, Period: 3}
+          // ];
+
+          console.log(JSON.stringify(this.serverData));
           console.log('From angular!');
-          console.log(this.serverData);
         }
       }]);
 
@@ -404,15 +398,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     HourglassComponent.ɵfac = function HourglassComponent_Factory(t) {
-      return new (t || HourglassComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || HourglassComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
     };
 
     HourglassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: HourglassComponent,
       selectors: [["app-hourglass"]],
-      decls: 10,
-      vars: 1,
-      consts: [["color", "primary", 1, "mat-elevation-z4"], [1, "container"], ["mat-fab", "", 3, "click"], ["mat-table", "", 1, "mat-elevation-z4", 3, "dataSource"], ["matColumnDef", "Start"], ["mat-cell", "", 4, "matCellDef"], ["mat-cell", ""]],
+      decls: 6,
+      vars: 0,
+      consts: [["color", "primary", 1, "mat-elevation-z4"], [1, "container"], ["mat-fab", "", 3, "click"]],
       template: function HourglassComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -437,29 +431,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "br");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "table", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8, 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, HourglassComponent_td_9_Template, 2, 1, "td", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.serverData);
         }
       },
-      directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_2__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__["MatIcon"], _angular_material_table__WEBPACK_IMPORTED_MODULE_5__["MatTable"], _angular_material_table__WEBPACK_IMPORTED_MODULE_5__["MatColumnDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_5__["MatCellDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_5__["MatCell"]],
-      styles: [".container[_ngcontent-%COMP%] {\n  width: 70%;\n  display: flex;\n  padding: 24px;\n  margin: 24px auto;\n  border-left: solid 3px gray;\n  border-right: solid 3px gray;\n  justify-content: space-between;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG91cmdsYXNzL2hvdXJnbGFzcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsVUFBVTtFQUNWLGFBQWE7RUFDYixhQUFhO0VBQ2IsaUJBQWlCO0VBQ2pCLDJCQUEyQjtFQUMzQiw0QkFBNEI7RUFDNUIsOEJBQThCO0FBQ2hDIiwiZmlsZSI6InNyYy9hcHAvaG91cmdsYXNzL2hvdXJnbGFzcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XG4gIHdpZHRoOiA3MCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHBhZGRpbmc6IDI0cHg7XG4gIG1hcmdpbjogMjRweCBhdXRvO1xuICBib3JkZXItbGVmdDogc29saWQgM3B4IGdyYXk7XG4gIGJvcmRlci1yaWdodDogc29saWQgM3B4IGdyYXk7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbiJdfQ== */"]
+      directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_3__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"]],
+      styles: ["table[_ngcontent-%COMP%] {\n  width: 80%;\n  \n}\n\n.container[_ngcontent-%COMP%] {\n  width: 70%;\n  padding: 24px;\n  display: flex;\n  min-height: 100%;\n  margin: 24px auto;\n  flex-flow: row wrap;\n  border-left: solid 3px gray;\n  border-right: solid 3px gray;\n  justify-content: space-around;\n}\n\n.break[_ngcontent-%COMP%] {\n  height: 30px;\n  flex-basis: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG91cmdsYXNzL2hvdXJnbGFzcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsVUFBVTtFQUNWLDJCQUEyQjtBQUM3Qjs7QUFFQTtFQUNFLFVBQVU7RUFDVixhQUFhO0VBQ2IsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLDJCQUEyQjtFQUMzQiw0QkFBNEI7RUFDNUIsNkJBQTZCO0FBQy9COztBQUVBO0VBQ0UsWUFBWTtFQUNaLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2hvdXJnbGFzcy9ob3VyZ2xhc3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcbiAgd2lkdGg6IDgwJTtcbiAgLypqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsqL1xufVxuXG4uY29udGFpbmVyIHtcbiAgd2lkdGg6IDcwJTtcbiAgcGFkZGluZzogMjRweDtcbiAgZGlzcGxheTogZmxleDtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgbWFyZ2luOiAyNHB4IGF1dG87XG4gIGZsZXgtZmxvdzogcm93IHdyYXA7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZCAzcHggZ3JheTtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZCAzcHggZ3JheTtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG59XG5cbi5icmVhayB7XG4gIGhlaWdodDogMzBweDtcbiAgZmxleC1iYXNpczogMTAwJTtcbn1cbiJdfQ== */"]
     });
     HourglassComponent.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HourglassComponent,
@@ -479,7 +455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
       }], function () {
         return [{
-          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
         }];
       }, null);
     })();
