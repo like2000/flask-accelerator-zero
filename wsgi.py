@@ -24,11 +24,11 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run()
+    # app.run()
 
     # try:
-    # host = "https://accelerator-zero.herokuapp.com"
-    # app.run(host=host)
+    host = "https://accelerator-zero.herokuapp.com"
+    app.run(host=host)
     # except:
     #     host="localhost"
     #     app.run(host=host)

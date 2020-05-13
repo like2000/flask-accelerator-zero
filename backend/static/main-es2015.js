@@ -184,12 +184,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HourglassComponent", function() { return HourglassComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/table.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/toolbar.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
-
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/toolbar.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
 
 
 
@@ -211,10 +209,11 @@ class HourglassComponent {
     ngOnInit() {
     }
     getData() {
-        const url = 'https://accelerator-zero.herokuapp.com/data';
+        const url = 'http://127.0.0.1:5000/data';
+        // const url = 'https://accelerator-zero.herokuapp.com/data';
         this.httpClient.get(url).subscribe(value => {
             this.serverData = value;
-            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
+            // this.dataSource = new MatTableDataSource();
         });
         // this.serverData = [
         //   {Start: 1, Stop: 2, Period: 3}
@@ -223,7 +222,7 @@ class HourglassComponent {
         console.log('From angular!');
     }
 }
-HourglassComponent.ɵfac = function HourglassComponent_Factory(t) { return new (t || HourglassComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
+HourglassComponent.ɵfac = function HourglassComponent_Factory(t) { return new (t || HourglassComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
 HourglassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HourglassComponent, selectors: [["app-hourglass"]], decls: 6, vars: 0, consts: [["color", "primary", 1, "mat-elevation-z4"], [1, "container"], ["mat-fab", "", 3, "click"]], template: function HourglassComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Flask Accelerator Zero App");
@@ -236,7 +235,7 @@ HourglassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_3__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"]], styles: ["table[_ngcontent-%COMP%] {\n  width: 80%;\n  \n}\n\n.container[_ngcontent-%COMP%] {\n  width: 70%;\n  padding: 24px;\n  display: flex;\n  min-height: 100%;\n  margin: 24px auto;\n  flex-flow: row wrap;\n  border-left: solid 3px gray;\n  border-right: solid 3px gray;\n  justify-content: space-around;\n}\n\n.break[_ngcontent-%COMP%] {\n  height: 30px;\n  flex-basis: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG91cmdsYXNzL2hvdXJnbGFzcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsVUFBVTtFQUNWLDJCQUEyQjtBQUM3Qjs7QUFFQTtFQUNFLFVBQVU7RUFDVixhQUFhO0VBQ2IsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLDJCQUEyQjtFQUMzQiw0QkFBNEI7RUFDNUIsNkJBQTZCO0FBQy9COztBQUVBO0VBQ0UsWUFBWTtFQUNaLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2hvdXJnbGFzcy9ob3VyZ2xhc3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcbiAgd2lkdGg6IDgwJTtcbiAgLypqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsqL1xufVxuXG4uY29udGFpbmVyIHtcbiAgd2lkdGg6IDcwJTtcbiAgcGFkZGluZzogMjRweDtcbiAgZGlzcGxheTogZmxleDtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgbWFyZ2luOiAyNHB4IGF1dG87XG4gIGZsZXgtZmxvdzogcm93IHdyYXA7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZCAzcHggZ3JheTtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZCAzcHggZ3JheTtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG59XG5cbi5icmVhayB7XG4gIGhlaWdodDogMzBweDtcbiAgZmxleC1iYXNpczogMTAwJTtcbn1cbiJdfQ== */"] });
+    } }, directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_2__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__["MatIcon"]], styles: ["table[_ngcontent-%COMP%] {\n  width: 80%;\n  \n}\n\n.container[_ngcontent-%COMP%] {\n  width: 70%;\n  padding: 24px;\n  display: flex;\n  min-height: 100%;\n  margin: 24px auto;\n  flex-flow: row wrap;\n  border-left: solid 3px gray;\n  border-right: solid 3px gray;\n  justify-content: space-around;\n}\n\n.break[_ngcontent-%COMP%] {\n  height: 30px;\n  flex-basis: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG91cmdsYXNzL2hvdXJnbGFzcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsVUFBVTtFQUNWLDJCQUEyQjtBQUM3Qjs7QUFFQTtFQUNFLFVBQVU7RUFDVixhQUFhO0VBQ2IsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLDJCQUEyQjtFQUMzQiw0QkFBNEI7RUFDNUIsNkJBQTZCO0FBQy9COztBQUVBO0VBQ0UsWUFBWTtFQUNaLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2hvdXJnbGFzcy9ob3VyZ2xhc3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcbiAgd2lkdGg6IDgwJTtcbiAgLypqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsqL1xufVxuXG4uY29udGFpbmVyIHtcbiAgd2lkdGg6IDcwJTtcbiAgcGFkZGluZzogMjRweDtcbiAgZGlzcGxheTogZmxleDtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgbWFyZ2luOiAyNHB4IGF1dG87XG4gIGZsZXgtZmxvdzogcm93IHdyYXA7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZCAzcHggZ3JheTtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZCAzcHggZ3JheTtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG59XG5cbi5icmVhayB7XG4gIGhlaWdodDogMzBweDtcbiAgZmxleC1iYXNpczogMTAwJTtcbn1cbiJdfQ== */"] });
 HourglassComponent.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: HourglassComponent, factory: HourglassComponent.ɵfac });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HourglassComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -247,7 +246,7 @@ HourglassComponent.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
             }]
     }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
