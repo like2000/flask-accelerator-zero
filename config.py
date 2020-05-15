@@ -31,6 +31,6 @@ class LocalConfig:
     FLASK_DEBUG = 1
 
     # Database
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///data/bdata.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///data/data.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True

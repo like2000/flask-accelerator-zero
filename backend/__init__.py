@@ -34,7 +34,6 @@ def create_app():
         template_folder='templates',
     )
     server.config.from_object('config.LocalConfig')
-    print(server.config)
 
     db.init_app(server)
     with server.app_context():
