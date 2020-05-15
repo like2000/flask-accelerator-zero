@@ -33,7 +33,7 @@ def create_app():
         static_folder='static',
         template_folder='templates',
     )
-    server.config.from_object('config.Config')
+    server.config.from_object('config.LocalConfig')
     print(server.config)
 
     db.init_app(server)
