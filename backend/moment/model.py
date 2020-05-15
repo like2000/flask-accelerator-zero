@@ -13,17 +13,19 @@ from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
 
 # create declarative_base instance
+from backend import db
+
 Base = declarative_base()
 
 
 # We will add classes here
-class Book(Base):
+class Book(db.Model):
     __tablename__ = 'book'
 
-    id = Column(Integer, primary_key=True)
-    title = Column(String(250), nullable=False)
-    author = Column(String(250), nullable=False)
-    genre = Column(String(250))
+    id = db.Column(Integer, primary_key=True)
+    title = db.Column(String(250), nullable=False)
+    author = db.Column(String(250), nullable=False)
+    genre = db.Column(String(250), nullable=False)
 
     @property
     def serialize(self):
@@ -35,16 +37,19 @@ class Book(Base):
         }
 
 
-# Creates a create_engine instance at the bottom of the file
-engine = create_engine('sqlite:///backend/data/books-collection.db')
-Base.metadata.create_all(engine)
+el = Book(title="Test")
+# db.session.add(el)
 
-# Connect to Database and create database session
-engine = create_engine('sqlite:///backend/data/books-collection.db')
-Base.metadata.bind = engine
-
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
+# # Creates a create_engine instance at the bottom of the file
+# engine = create_engine('sqlite:///backend/data/books-collection.db')
+# Base.metadata.create_all(engine)
+#
+# # Connect to Database and create database session
+# engine = create_engine('sqlite:///backend/data/books-collection.db')
+# Base.metadata.bind = engine
+#
+# DBSession = sessionmaker(bind=engine)
+# session = DBSession()
 
 # # landing page that will display all the books in our database
 # # This function operate on the Read operation.

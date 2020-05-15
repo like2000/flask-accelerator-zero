@@ -16,10 +16,10 @@ def register_blueprints(server: Flask):
         server.register_blueprint(module.blueprint, url_prefix=f'/{module_name}')
 
 
-def register_db(server: Flask, path='sqlite:///data/data.db'):
-    server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    server.config['SQLALCHEMY_DATABASE_URI'] = path
-    db.init_app(server)
+# def register_db(server: Flask, path='sqlite:///data/data.db'):
+#     server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#     server.config['SQLALCHEMY_DATABASE_URI'] = path
+#     db.init_app(server)
 
 
 def create_app():
@@ -33,8 +33,13 @@ def create_app():
         static_folder='static',
         template_folder='templates',
     )
+    server.config.from_object('config.Config')
+    print(server.config)
+
+    db.init_app(server)
+    with server.app_context():
+        db.create_all()
 
     register_blueprints(server)
-    register_db(server)
 
     return server
