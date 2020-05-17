@@ -481,7 +481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getData() {
           var _this = this;
 
-          var url = 'http://127.0.0.1:5000/newData'; // const url = 'https://accelerator-zero.herokuapp.com/data';
+          var url = 'http://127.0.0.1:5000/moment/newData'; // const url = 'https://accelerator-zero.herokuapp.com/data';
 
           this.httpClient.get(url).subscribe(function (value) {
             _this.serverData = value; // this.dataSource = new Array(this.serverData);

@@ -15,7 +15,8 @@ from sqlalchemy import create_engine
 # create declarative_base instance
 from backend import db
 
-Base = declarative_base()
+
+# Base = declarative_base()
 
 
 # We will add classes here
@@ -37,8 +38,35 @@ class Book(db.Model):
         }
 
 
-el = Book(title="Test")
+# el = Book(title="Test")
 # db.session.add(el)
+
+
+class User(db.Model):
+    __tablename__ = 'user'
+    __table_args__ = {'extend_existing': True}
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(128), index=True)
+    email = db.Column(db.String(128), index=True, unique=True)
+    password_hash = db.Column(db.String(128))
+
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'password_hash': self.password_hash,
+        }
+
+    def __repr__(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'password_hash': self.password_hash,
+        }
 
 # # Creates a create_engine instance at the bottom of the file
 # engine = create_engine('sqlite:///backend/data/books-collection.db')

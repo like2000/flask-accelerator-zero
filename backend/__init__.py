@@ -6,6 +6,19 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
+# class User(db.Model):
+#     __tablename__ = 'user'
+#     __table_args__ = {'extend_existing': True}
+#
+#     id = db.Column(db.Integer, primary_key=True)
+#     username = db.Column(db.String(128), index=True)
+#     email = db.Column(db.String(128), index=True, unique=True)
+#     password_hash = db.Column(db.String(128))
+#
+#     def __repr__(self):
+#         return '<User {}>'.format(self.username)
+
+
 def register_extentions(server: Flask):
     ...
 
@@ -35,10 +48,9 @@ def create_app():
     )
     server.config.from_object('config.LocalConfig')
 
-    db.init_app(server)
     with server.app_context():
+        register_blueprints(server)
+        db.init_app(server)
         db.create_all()
 
-    register_blueprints(server)
-
-    return server
+        return server

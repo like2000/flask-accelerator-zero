@@ -261,7 +261,7 @@ class HourglassComponent {
     ngOnInit() {
     }
     getData() {
-        const url = 'http://127.0.0.1:5000/newData';
+        const url = 'http://127.0.0.1:5000/moment/newData';
         // const url = 'https://accelerator-zero.herokuapp.com/data';
         this.httpClient.get(url).subscribe(value => {
             this.serverData = value;
