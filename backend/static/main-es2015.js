@@ -209,7 +209,7 @@ function HourglassComponent_td_10_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const data_r8 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r8.Start);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r8.username);
 } }
 function HourglassComponent_th_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 12);
@@ -223,7 +223,7 @@ function HourglassComponent_td_13_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const data_r9 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r9.Stop);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r9.email);
 } }
 function HourglassComponent_th_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 12);
@@ -237,7 +237,7 @@ function HourglassComponent_td_16_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const data_r10 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r10.Period);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r10.password_hash);
 } }
 function HourglassComponent_tr_17_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 14);
@@ -259,19 +259,22 @@ class HourglassComponent {
         this.hourGlassElement = {};
     }
     ngOnInit() {
+        this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
+        this.getData();
     }
     getData() {
-        const url = 'http://127.0.0.1:5000/newData';
+        const url = 'http://127.0.0.1:5000/moment/newData';
         // const url = 'https://accelerator-zero.herokuapp.com/data';
         this.httpClient.get(url).subscribe(value => {
             this.serverData = value;
             // this.dataSource = new Array(this.serverData);
-            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
-            this.dataSource.data = [value];
+            // this.serverData = [
+            //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
+            //   {username: 'mei', email: 'li', password_hash: 'You'}
+            // ];
+            this.dataSource.data = value;
+            // this.dataSource.paginator = this.paginator;
         });
-        // this.serverData = [
-        //   {Start: 1, Stop: 2, Period: 3}
-        // ];
         console.log(this.serverData);
         console.log('From angular!');
     }
@@ -308,7 +311,7 @@ HourglassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.serverData);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.dataSource);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matHeaderRowDef", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](3, _c0));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);

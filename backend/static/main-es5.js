@@ -382,7 +382,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r8.Start);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r8.username);
       }
     }
 
@@ -410,7 +410,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r9.Stop);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r9.email);
       }
     }
 
@@ -438,7 +438,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r10.Period);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r10.password_hash);
       }
     }
 
@@ -475,23 +475,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(HourglassComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
+          this.getData();
+        }
       }, {
         key: "getData",
         value: function getData() {
           var _this = this;
 
-          var url = 'http://127.0.0.1:5000/newData'; // const url = 'https://accelerator-zero.herokuapp.com/data';
+          var url = 'http://127.0.0.1:5000/moment/newData'; // const url = 'https://accelerator-zero.herokuapp.com/data';
 
           this.httpClient.get(url).subscribe(function (value) {
             _this.serverData = value; // this.dataSource = new Array(this.serverData);
+            // this.serverData = [
+            //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
+            //   {username: 'mei', email: 'li', password_hash: 'You'}
+            // ];
 
-            _this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
-            _this.dataSource.data = [value];
-          }); // this.serverData = [
-          //   {Start: 1, Stop: 2, Period: 3}
-          // ];
-
+            _this.dataSource.data = value; // this.dataSource.paginator = this.paginator;
+          });
           console.log(this.serverData);
           console.log('From angular!');
         }
@@ -574,7 +577,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.serverData);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.dataSource);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 

@@ -1,6 +1,7 @@
 import {Component, Injectable, OnInit, Type} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
+import {NONE_TYPE} from '@angular/compiler';
 
 interface HourGlassElement {
   start: string;
@@ -22,7 +23,7 @@ export class HourglassComponent implements OnInit {
 
   // serverData: JSON;
   serverData;
-  dataSource: MatTableDataSource<any>;
+  dataSource;
 
 //   ngOnInit() {
 //   this.yourService.getData()
@@ -36,20 +37,23 @@ export class HourglassComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource();
+    this.getData();
   }
 
   getData(): void {
-    const url = 'http://127.0.0.1:5000/newData';
+    const url = 'http://127.0.0.1:5000/moment/newData';
     // const url = 'https://accelerator-zero.herokuapp.com/data';
     this.httpClient.get(url).subscribe(value => {
       this.serverData = value as JSON;
       // this.dataSource = new Array(this.serverData);
-      this.dataSource = new MatTableDataSource();
-      this.dataSource.data = [value];
+      // this.serverData = [
+      //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
+      //   {username: 'mei', email: 'li', password_hash: 'You'}
+      // ];
+      this.dataSource.data = value;
+      // this.dataSource.paginator = this.paginator;
     });
-    // this.serverData = [
-    //   {Start: 1, Stop: 2, Period: 3}
-    // ];
     console.log(this.serverData);
     console.log('From angular!');
   }
