@@ -26,5 +26,7 @@ def newData():
     db.session.add(model)
     db.session.commit()
 
-    print("Query: ", User.query.all())
-    return User.query.all()
+    data = list(map(lambda u: u.serialize, User.query.all()))
+    # print("Query: ", {'data': list(map(lambda u: u.serialize, User.query.all()))})
+    # return {'data': list(map(lambda u: u.serialize, User.query.all()))}
+    return jsonify(data)

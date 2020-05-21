@@ -60,13 +60,13 @@ class User(db.Model):
             'password_hash': self.password_hash,
         }
 
-    def __repr__(self):
-        return {
-            'id': self.id,
-            'username': self.username,
-            'email': self.email,
-            'password_hash': self.password_hash,
-        }
+    # def __repr__(self):
+    #     return {
+    #         'id': self.id,
+    #         'username': self.username,
+    #         'email': self.email,
+    #         'password_hash': self.password_hash,
+    #     }
 
 # # Creates a create_engine instance at the bottom of the file
 # engine = create_engine('sqlite:///backend/data/books-collection.db')
