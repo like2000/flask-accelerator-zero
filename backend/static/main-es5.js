@@ -477,6 +477,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngOnInit",
         value: function ngOnInit() {
           this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
+          this.getData();
         }
       }, {
         key: "getData",
@@ -492,7 +493,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             //   {username: 'mei', email: 'li', password_hash: 'You'}
             // ];
 
-            _this.dataSource.data = value;
+            _this.dataSource.data = value; // this.dataSource.paginator = this.paginator;
           });
           console.log(this.serverData);
           console.log('From angular!');

@@ -38,6 +38,7 @@ export class HourglassComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource();
+    this.getData();
   }
 
   getData(): void {

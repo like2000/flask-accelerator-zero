@@ -260,6 +260,7 @@ class HourglassComponent {
     }
     ngOnInit() {
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
+        this.getData();
     }
     getData() {
         const url = 'http://127.0.0.1:5000/moment/newData';
@@ -272,6 +273,7 @@ class HourglassComponent {
             //   {username: 'mei', email: 'li', password_hash: 'You'}
             // ];
             this.dataSource.data = value;
+            // this.dataSource.paginator = this.paginator;
         });
         console.log(this.serverData);
         console.log('From angular!');
