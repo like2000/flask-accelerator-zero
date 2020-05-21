@@ -37,6 +37,7 @@ export class HourglassComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource();
   }
 
   getData(): void {
@@ -49,8 +50,8 @@ export class HourglassComponent implements OnInit {
       //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
       //   {username: 'mei', email: 'li', password_hash: 'You'}
       // ];
-      // this.dataSource = new MatTableDataSource();
       this.dataSource.data = value;
+      // this.dataSource.paginator = this.paginator;
     });
     console.log(this.serverData);
     console.log('From angular!');
