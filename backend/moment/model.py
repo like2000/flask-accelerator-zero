@@ -1,22 +1,6 @@
-import sys
+from sqlalchemy import Integer, String
 
-# for creating the mapper code
-from sqlalchemy import Column, ForeignKey, Integer, String
-
-# for configuration and class code
-from sqlalchemy.ext.declarative import declarative_base
-
-# for creating foreign key relationship between the tables
-from sqlalchemy.orm import relationship, sessionmaker
-
-# for configuration
-from sqlalchemy import create_engine
-
-# create declarative_base instance
 from backend import db
-
-
-# Base = declarative_base()
 
 
 # We will add classes here

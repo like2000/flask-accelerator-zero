@@ -17,14 +17,6 @@ class Entity(Resource):
         print("Hello from Python!", len(self.df), id(self), id(self.df))
         response = Response(response=self.df.to_json(), status=200, mimetype="application/json")
         return response
-        # return jsonify({
-        #     'Orc': 800,
-        #     'Farnir': 400,
-        #     'Goblin': 200,
-        # })
 
     def save(self):
-        pass
-
-    def data_output(self):
         pass
