@@ -19,7 +19,7 @@ db = SQLAlchemy()
 #         return '<User {}>'.format(self.username)
 
 
-def register_extentions(server: Flask):
+def register_extensions(server: Flask):
     ...
 
 

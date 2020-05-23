@@ -42,8 +42,8 @@ export class HourglassComponent implements OnInit {
   }
 
   getData(): void {
-    const url = 'http://127.0.0.1:5000/moment/newData';
-    // const url = 'https://accelerator-zero.herokuapp.com/data';
+    // const url = 'http://127.0.0.1:5000/moment/newData';
+    const url = 'https://accelerator-zero.herokuapp.com/data';
     this.httpClient.get(url).subscribe(value => {
       value = [
         {username: 'bruce', email: 'li', password_hash: 'Holla'},
