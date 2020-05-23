@@ -487,13 +487,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var url = 'http://127.0.0.1:5000/moment/newData'; // const url = 'https://accelerator-zero.herokuapp.com/data';
 
           this.httpClient.get(url).subscribe(function (value) {
-            _this.serverData = value; // this.dataSource = new Array(this.serverData);
-            // this.serverData = [
-            //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
-            //   {username: 'mei', email: 'li', password_hash: 'You'}
-            // ];
-
-            _this.dataSource.data = value; // this.dataSource.paginator = this.paginator;
+            value = [{
+              username: 'bruce',
+              email: 'li',
+              password_hash: 'Holla'
+            }, {
+              username: 'mei',
+              email: 'li',
+              password_hash: 'You'
+            }];
+            _this.dataSource.data = value;
+            _this.serverData = value; // this.dataSource.paginator = this.paginator;
           });
           console.log(this.serverData);
           console.log('From angular!');

@@ -40,7 +40,6 @@ from backend import create_app
 # if __name__ == '__main__':
 app = create_app()
 CORS(app)
-print(app.url_map)
 
 
 @app.route('/<path:path>', methods=['GET', 'POST'])

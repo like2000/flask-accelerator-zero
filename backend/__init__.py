@@ -47,6 +47,7 @@ def create_app():
         template_folder='templates',
     )
     server.config.from_object('config.LocalConfig')
+    # server.config.from_object('config.LocalConfig')
 
     with server.app_context():
         register_blueprints(server)

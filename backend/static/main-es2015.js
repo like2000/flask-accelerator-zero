@@ -266,13 +266,12 @@ class HourglassComponent {
         const url = 'http://127.0.0.1:5000/moment/newData';
         // const url = 'https://accelerator-zero.herokuapp.com/data';
         this.httpClient.get(url).subscribe(value => {
-            this.serverData = value;
-            // this.dataSource = new Array(this.serverData);
-            // this.serverData = [
-            //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
-            //   {username: 'mei', email: 'li', password_hash: 'You'}
-            // ];
+            value = [
+                { username: 'bruce', email: 'li', password_hash: 'Holla' },
+                { username: 'mei', email: 'li', password_hash: 'You' }
+            ];
             this.dataSource.data = value;
+            this.serverData = value;
             // this.dataSource.paginator = this.paginator;
         });
         console.log(this.serverData);
