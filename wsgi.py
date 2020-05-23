@@ -54,9 +54,10 @@ def index():
     return send_from_directory('static', 'index.html')
 
 
+app.run()
 # try:
-host = "https://accelerator-zero.herokuapp.com"
-app.run(host=host)
+# host = "https://accelerator-zero.herokuapp.com"
+# app.run(host=host)
 # except:
 #     host="localhost"
 #     app.run(host=host)
