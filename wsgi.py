@@ -53,8 +53,7 @@ def static_proxy(path):
 def index():
     return send_from_directory('static', 'index.html')
 
-
-app.run()
+# app.run()
 # try:
 # host = "https://accelerator-zero.herokuapp.com"
 # app.run(host=host)
