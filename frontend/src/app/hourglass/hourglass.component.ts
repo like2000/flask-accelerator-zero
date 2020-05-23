@@ -35,10 +35,10 @@ export class HourglassComponent implements OnInit {
     // const url = 'http://127.0.0.1:5000/moment/newData';
     const url = 'https://accelerator-zero.herokuapp.com/moment/newData';
     this.httpClient.get(url).subscribe(value => {
-      value = [
-        {username: 'bruce', email: 'li', password_hash: 'Holla'},
-        {username: 'mei', email: 'li', password_hash: 'You'}
-      ];
+      // value = [
+      //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
+      //   {username: 'mei', email: 'li', password_hash: 'You'}
+      // ];
       this.dataSource.data = value;
       this.serverData = value as JSON;
       // this.dataSource.paginator = this.paginator;
