@@ -459,18 +459,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     var HourglassComponent = /*#__PURE__*/function () {
-      //   ngOnInit() {
-      //   this.yourService.getData()
-      //     .subscribe((data: Type[]) => {
-      //       this.data = data;
-      //       this.dataSource = new MatTableDataSource(data);
-      //     });
-      // }
       function HourglassComponent(httpClient) {
         _classCallCheck(this, HourglassComponent);
 
         this.httpClient = httpClient;
-        this.hourGlassElement = {};
       }
 
       _createClass(HourglassComponent, [{
@@ -485,7 +477,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           // const url = 'http://127.0.0.1:5000/moment/newData';
-          var url = 'https://accelerator-zero.herokuapp.com/newData';
+          var url = 'https://accelerator-zero.herokuapp.com/moment/newData';
           this.httpClient.get(url).subscribe(function (value) {
             value = [{
               username: 'bruce',

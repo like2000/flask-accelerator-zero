@@ -247,16 +247,8 @@ function HourglassComponent_tr_18_Template(rf, ctx) { if (rf & 1) {
 } }
 const _c0 = function () { return ["Start", "Stop", "Period"]; };
 class HourglassComponent {
-    //   ngOnInit() {
-    //   this.yourService.getData()
-    //     .subscribe((data: Type[]) => {
-    //       this.data = data;
-    //       this.dataSource = new MatTableDataSource(data);
-    //     });
-    // }
     constructor(httpClient) {
         this.httpClient = httpClient;
-        this.hourGlassElement = {};
     }
     ngOnInit() {
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"]();
@@ -264,7 +256,7 @@ class HourglassComponent {
     }
     getData() {
         // const url = 'http://127.0.0.1:5000/moment/newData';
-        const url = 'https://accelerator-zero.herokuapp.com/newData';
+        const url = 'https://accelerator-zero.herokuapp.com/moment/newData';
         this.httpClient.get(url).subscribe(value => {
             value = [
                 { username: 'bruce', email: 'li', password_hash: 'Holla' },
