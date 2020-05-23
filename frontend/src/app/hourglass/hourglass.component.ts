@@ -19,19 +19,9 @@ interface HourGlassElement {
 export class HourglassComponent implements OnInit {
 
 
-  hourGlassElement = {};
-
-  // serverData: JSON;
-  serverData;
   dataSource;
+  serverData: JSON;
 
-//   ngOnInit() {
-//   this.yourService.getData()
-//     .subscribe((data: Type[]) => {
-//       this.data = data;
-//       this.dataSource = new MatTableDataSource(data);
-//     });
-// }
 
   constructor(private httpClient: HttpClient) {
   }
@@ -43,7 +33,7 @@ export class HourglassComponent implements OnInit {
 
   getData(): void {
     // const url = 'http://127.0.0.1:5000/moment/newData';
-    const url = 'https://accelerator-zero.herokuapp.com/data';
+    const url = 'https://accelerator-zero.herokuapp.com/newData';
     this.httpClient.get(url).subscribe(value => {
       value = [
         {username: 'bruce', email: 'li', password_hash: 'Holla'},

@@ -485,7 +485,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           // const url = 'http://127.0.0.1:5000/moment/newData';
-          var url = 'https://accelerator-zero.herokuapp.com/data';
+          var url = 'https://accelerator-zero.herokuapp.com/newData';
           this.httpClient.get(url).subscribe(function (value) {
             value = [{
               username: 'bruce',
