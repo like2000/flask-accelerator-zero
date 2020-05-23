@@ -37,23 +37,23 @@ from backend import create_app
 #     return send_from_directory('static', 'index.html')
 
 
+app = create_app()
+CORS(app)
+
+
+@app.route('/<path:path>', methods=['GET', 'POST'])
+@cross_origin()
+def static_proxy(path):
+    return send_from_directory('static', path)
+
+
+@app.route('/', methods=['GET', 'POST'])
+@cross_origin()
+def index():
+    return send_from_directory('static', 'index.html')
+
+
 if __name__ == '__main__':
-    app = create_app()
-    CORS(app)
-
-
-    @app.route('/<path:path>', methods=['GET', 'POST'])
-    @cross_origin()
-    def static_proxy(path):
-        return send_from_directory('static', path)
-
-
-    @app.route('/', methods=['GET', 'POST'])
-    @cross_origin()
-    def index():
-        return send_from_directory('static', 'index.html')
-
-
     app.run()
 
 # try:
