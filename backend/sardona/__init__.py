@@ -4,6 +4,6 @@ import pathlib
 
 name = pathlib.Path(__file__).parent.name
 
-Blueprint(
+blueprint = Blueprint(
     name + '_blue', __name__,
 )
