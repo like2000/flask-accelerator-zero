@@ -4,7 +4,6 @@ import pathlib
 
 name = pathlib.Path(__file__).parent.name
 
-blueprint = Blueprint(
+Blueprint(
     name + '_blue', __name__,
-    template_folder='templates'
 )

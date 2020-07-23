@@ -17,11 +17,7 @@ def register_blueprints(server: Flask):
 
 
 def create_app():
-    server = Flask(
-        __name__,
-        static_folder='static',
-        template_folder='templates',
-    )
+    server = Flask(__name__)
     server.config.from_object('config.LocalConfig')
 
     with server.app_context():
