@@ -1,4 +1,4 @@
-from flask import send_from_directory
+from flask import send_from_directory, url_for, render_template, redirect
 from flask_cors import CORS, cross_origin
 
 from backend import create_app
@@ -26,16 +26,16 @@ app = create_app()
 CORS(app)
 
 
-@app.route('/<path:path>', methods=['GET', 'POST'])
-@cross_origin()
-def static_proxy(path):
-    return send_from_directory('static', path)
+# @app.route('/<path:path>', methods=['GET', 'POST'])
+# @cross_origin()
+# def static_proxy(path):
+#     return send_from_directory('static', path)
 
 
 @app.route('/', methods=['GET', 'POST'])
 @cross_origin()
 def index():
-    return send_from_directory('static', 'index.html')
+    return redirect(url_for('angular_blue.index'))
 
 
 if __name__ == '__main__':
