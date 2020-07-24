@@ -16,10 +16,12 @@ interface HourGlassElement {
   templateUrl: './hourglass.component.html',
   styleUrls: ['./hourglass.component.css']
 })
+
+
 @Injectable()
 export class HourglassComponent implements OnInit {
 
-
+  background: any;
   serverData: JSON;
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -29,6 +31,8 @@ export class HourglassComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.background = 'primary';
+
     this.dataSource = new MatTableDataSource<any>();
     this.dataSource.paginator = this.paginator;
     this.getData();
