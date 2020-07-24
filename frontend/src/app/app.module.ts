@@ -12,11 +12,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTabsModule} from "@angular/material/tabs";
+import { AlbumComponent } from './album/album.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HourglassComponent
+    HourglassComponent,
+    AlbumComponent
   ],
     imports: [
         BrowserModule,
