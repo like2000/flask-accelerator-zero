@@ -7,11 +7,9 @@
   </span>
 </mat-toolbar>
 
-<!--<nav mat-tab-nav-bar fx [backgroundColor]="background">-->
-<nav mat-tab-nav-bar>
+<nav mat-tab-nav-bar fx backgroundColor="primary">
   <a mat-tab-link routerLink="home" routerLinkActive="active">Home</a>
   <a mat-tab-link routerLink="album">Album</a>
   <a mat-tab-link routerLink="flask">Flask World</a>
 </nav>
-
-<app-hourglass></app-hourglass>
+<router-outlet></router-outlet>

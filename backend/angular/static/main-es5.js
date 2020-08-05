@@ -268,12 +268,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _hourglass_hourglass_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ./hourglass/hourglass.component */
-    "./src/app/hourglass/hourglass.component.ts");
 
     var AppComponent = function AppComponent() {
       _classCallCheck(this, AppComponent);
@@ -290,7 +284,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-root"]],
       decls: 15,
       vars: 0,
-      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "position", "sticky", "top", "0", "z-index", "100"], ["mat-icon-button", "", "aria-label", "Example icon-button with menu icon", 1, "example-icon"], [2, "flex", "1 1 auto"], ["mat-tab-nav-bar", ""], ["mat-tab-link", "", "routerLink", "home", "routerLinkActive", "active"], ["mat-tab-link", "", "routerLink", "album"], ["mat-tab-link", "", "routerLink", "flask"]],
+      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "position", "sticky", "top", "0", "z-index", "100"], ["mat-icon-button", "", "aria-label", "Example icon-button with menu icon", 1, "example-icon"], [2, "flex", "1 1 auto"], ["mat-tab-nav-bar", "", "fx", "", "backgroundColor", "primary"], ["mat-tab-link", "", "routerLink", "home", "routerLinkActive", "active"], ["mat-tab-link", "", "routerLink", "album"], ["mat-tab-link", "", "routerLink", "flask"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -337,10 +331,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "app-hourglass");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "router-outlet");
         }
       },
-      directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_1__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__["MatTabNav"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__["MatTabLink"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkActive"], _hourglass_hourglass_component__WEBPACK_IMPORTED_MODULE_6__["HourglassComponent"]],
+      directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_1__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__["MatTabNav"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__["MatTabLink"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkActive"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterOutlet"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/

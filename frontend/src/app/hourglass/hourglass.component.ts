@@ -1,7 +1,6 @@
 import {Component, Injectable, OnInit, Type, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
-import {NONE_TYPE} from '@angular/compiler';
 import {MatPaginator} from '@angular/material/paginator';
 
 interface HourGlassElement {
