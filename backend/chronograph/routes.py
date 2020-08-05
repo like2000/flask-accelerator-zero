@@ -4,8 +4,8 @@ import numpy as np
 from flask import render_template, url_for, jsonify
 
 from backend import db
-from backend.moment import blueprint
-from backend.moment.model import User
+from backend.chronograph import blueprint
+from backend.chronograph.model import User
 
 model = User(username="like", email="li-shing@gmx.de")
 letts = list(string.ascii_lowercase)
