@@ -1,22 +1,19 @@
-import json
 import string
 
+import numpy as np
 from flask import render_template, url_for, jsonify
 
-import numpy as np
 from backend import db
 from backend.moment import blueprint
-from backend.moment.model import Book, User
+from backend.moment.model import User
 
 model = User(username="like", email="li-shing@gmx.de")
 letts = list(string.ascii_lowercase)
 
 
 @blueprint.route("/")
-def index():
-    return "Hello Kevin!"
-    # return render_template('index.html')
-    # return render_template(url_for('backend', filename='index.html'))
+def home():
+    return render_template(url_for('backend', filename='index.html'))
 
 
 @blueprint.route("/newData", methods=['GET'])

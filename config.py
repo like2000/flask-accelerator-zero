@@ -3,7 +3,7 @@ from os import environ, path
 # from dotenv import load_dotenv
 
 basedir = path.abspath(path.dirname(__file__))
-db_name = "databasea.db"
+db_name = "database.db"
 
 
 # load_dotenv(path.join(basedir, '.env'))
@@ -32,6 +32,6 @@ class LocalConfig:
     FLASK_DEBUG = 1
 
     # Database
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///data/' + db_name
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///angular/data/' + db_name
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
