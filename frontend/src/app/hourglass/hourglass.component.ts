@@ -47,8 +47,8 @@ export class HourglassComponent implements OnInit {
       //   {username: 'mei', email: 'li', password_hash: 'You'}
       // ];
       this.dataSource.data = value;
+      this.dataSource.paginator = this.paginator;
       this.serverData = value as unknown as JSON;
-      // this.dataSource.paginator = this.paginator;
     });
     console.log(this.serverData);
     console.log('From angular!');

@@ -1,8 +1,18 @@
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
 <nav mat-tab-nav-bar fx [backgroundColor]="background">
   <a mat-tab-link href="../album/album.component.html">One</a>
   <a mat-tab-link href="album/index.html">Two</a>
   <a mat-tab-link>Three</a>
 </nav>
+
+<div class="w3-display-container">
+  <div class="w3-display-middle w3-badge w3-red w3-xxlarge w3-padding-24">Hello!</div>
+  <img src="assets/images/P_20200805_100134.jpg" alt="Lights"
+       style="width:100%; height: 600px; object-fit: cover; object-position: center center; display: flex;">
+</div>
 
 <div class="container">
 
@@ -36,7 +46,7 @@
 
   <div class="break"></div>
 
-  <mat-paginator #paginator class="mat-elevation-z4" style="width: 50%; alignment: left;" [length]="5" [pageSize]="3"
+  <mat-paginator #paginator class="mat-elevation-z4" style="width: 80%; alignment: left;" [length]="5" [pageSize]="25"
                  [pageSizeOptions]="[5, 10, 25]">
   </mat-paginator>
 
