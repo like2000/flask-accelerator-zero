@@ -17,20 +17,20 @@ import {AlbumComponent} from './album/album.component';
 @NgModule({
   declarations: [
     AppComponent,
+    AlbumComponent,
     HourglassComponent,
-    AlbumComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
     MatIconModule,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
     MatTabsModule,
+    MatTableModule,
+    MatButtonModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

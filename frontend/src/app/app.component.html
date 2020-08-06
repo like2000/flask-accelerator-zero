@@ -1,23 +1,27 @@
 <mat-toolbar class="mat-elevation-z4" color="primary" style="position: sticky; top: 0; z-index: 100;">
-  <mat-toolbar-row>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Flask Accelerator Zero App
+  <!--  <mat-toolbar-row>-->
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Flask Accelerator Zero App
     <div style="flex: 1 1 auto;"></div>
   </span>
-  </mat-toolbar-row>
+  <!--  </mat-toolbar-row>-->
 
-  <mat-toolbar-row>
-    <nav mat-tab-nav-bar fx backgroundColor="primary">
-      <a mat-tab-link routerLink="home" routerLinkActive="active">Home</a>
-      <a mat-tab-link routerLink="album">Album</a>
-      <a mat-tab-link routerLink="flask">Flask World</a>
-    </nav>
-  </mat-toolbar-row>
+  <!--  <mat-toolbar-row>-->
+  <!--    <nav mat-tab-nav-bar fx backgroundColor="primary">-->
+  <!--      <a mat-tab-link routerLink="home" routerLinkActive="active">Home</a>-->
+  <!--      <a mat-tab-link routerLink="album">Album</a>-->
+  <!--      <a mat-tab-link routerLink="flask">Flask World</a>-->
+  <!--    </nav>-->
+  <!--  </mat-toolbar-row>-->
 </mat-toolbar>
 
-<!--<nav mat-tab-nav-bar fx backgroundColor="primary">-->
-<!--</nav>-->
+<nav mat-tab-nav-bar>
+<!--  fx backgroundColor="primary">-->
+  <a mat-tab-link routerLink="home" routerLinkActive="active">Home</a>
+  <a mat-tab-link routerLink="album">Album</a>
+  <a mat-tab-link href="album">Flask World</a>
+</nav>
 
 <router-outlet></router-outlet>

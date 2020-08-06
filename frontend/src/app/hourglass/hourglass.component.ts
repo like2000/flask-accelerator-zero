@@ -9,13 +9,14 @@ interface HourGlassElement {
   period: string;
 }
 
+// const host = 'localhost';
+const host = 'accelerator-zero.herokuapp.com';
 
 @Component({
   selector: 'app-hourglass',
   templateUrl: './hourglass.component.html',
   styleUrls: ['./hourglass.component.css']
 })
-
 
 @Injectable()
 export class HourglassComponent implements OnInit {
@@ -25,7 +26,6 @@ export class HourglassComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-
   constructor(private httpClient: HttpClient) {
   }
 
@@ -34,22 +34,24 @@ export class HourglassComponent implements OnInit {
 
     this.dataSource = new MatTableDataSource<any>();
     this.dataSource.paginator = this.paginator;
-    this.getData();
+    this.showData();
   }
 
-  getData(): void {
-    // const url = 'http://127.0.0.1:5000/moment/newData';
-    const url = 'https://accelerator-zero.herokuapp.com/moment/newData';
+  showData(): void {
+    const url = 'http://' + host + ':5000/chronograph/new_data';
     this.httpClient.get(url).subscribe((value: any[]) => {
-      // value = [
-      //   {username: 'bruce', email: 'li', password_hash: 'Holla'},
-      //   {username: 'mei', email: 'li', password_hash: 'You'}
-      // ];
       this.dataSource.data = value;
-      this.dataSource.paginator = this.paginator;
+      // this.dataSource.paginator = this.paginator;
       this.serverData = value as unknown as JSON;
     });
-    console.log(this.serverData);
-    console.log('From angular!');
+  }
+
+  newData(): void {
+    const url = 'http://' + host + ':5000/chronograph/new_data';
+    this.httpClient.get(url).subscribe((value: any[]) => {
+      this.dataSource.data = value;
+      // this.dataSource.paginator = this.paginator;
+      this.serverData = value as unknown as JSON;
+    });
   }
 }
